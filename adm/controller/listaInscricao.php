@@ -13,7 +13,13 @@ while($linha=$resultado->fetch_array()){
 		<td>" . $linha['Nome'] . "</td>
 		<td>" . $linha['Email'] . "</td>
 		<td>" . $linha['Matricula'] . "</td>
-		<td><button class=\"troca\"  type=\"submit\" value=\"" . $linha['id'] ."\" name=\"trocaStatus\">$frase</button></td>
-	</tr>";
+		<input type=\"hidden\" class=\"nome\" value=\"" . $linha['Nome'] ."\" name=\"nome\">
+		<td><button class=\"troca\"  type=\"submit\" value=\"" . $linha['id'] ."\" name=\"trocaStatus\">$frase</button></td><td>";
+		if($linha['Certificado']==0)
+			echo "<input type=\"checkbox\" id=\"" . $linha['id'] . "\" class=\"clicado\" name=\"clicado\" >";
+		else
+			
+			echo "<input type=\"checkbox\" id=\"" . $linha['id'] . "\" class=\"clicado\" name=\"clicado\" checked >";
+	echo"</td></tr>";
 }
 	?>

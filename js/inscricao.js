@@ -7,10 +7,14 @@ $("#formu").submit(function(e){
 		        	url: "controller/inserirInscricao.php",
 		         	data:$("#formu").serialize(),
 		          	success: function(data) {
-		          			$(".saida").html(data);
+		          		if(data==2)
+		          			$(".saida").html('Matricula já cadastrada');
+		          		else if(data)
 		          			$(".saida").html('inscricao realizada com sucesso');
-							document.getElementById('formu').reset();
-		         				$("formu").css("outline:none");
+		          		else 
+		          			$(".saida").html('Não realizada');
+						document.getElementById('formu').reset();
+
 			       	}
 			      });
 				});

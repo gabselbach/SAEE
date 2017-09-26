@@ -7,27 +7,26 @@
 	<link rel="stylesheet" type="text/css" href="../css/cssadm.css">
 		<script src="../js/jquery.js"></script>
 		<script src="../js/verificaSession.js"></script>
-   <script src="../js/listaInscricao.js"></script>
+   <script src="../js/listaCertificado.js"></script>
 	</head>
 	<body>
 	<div id="tudo">
 		<div id="cabecalho">
 				<ul class="drop_menu">
-					<li id="inscricao" class="a"><a href="administrativo.html">Confere Inscrição</a></li>
+					<li class="a"><a href="administrativo.html">Confere Inscrição</a></li>
 					<li  class="a"><a href="listaCertificados.html">Lista nomes para Certificado</a></li>
 					 <div id="sair" style=" position: fixed; margin-left:65%;">
                 <a  href="../index.html"><img id="sair" src="../imagens/sair.png"></a>
                 </div>
-                </ul
-                
+                </ul>
 			</div>
 		<div id="meio" >
-			
+			<h3>Nome das pessoas que receberam certificado</h3> 
 			<table id="tabela">
 			</table>
+			<a href="controller/tabela.php"><h3>Baixe a tabela com os nomes</h3></a>
 		</div>
-		<div id="text">
-		</div>
+		
 	</div>
 </body>
 </html>

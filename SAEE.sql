@@ -52,13 +52,14 @@ CREATE TABLE `inscricao` (
   `Nome` varchar(80) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Curso` varchar(50) NOT NULL,
-  `Matricula` int(25) NOT NULL,
+  `Matricula` varchar(15) NOT NULL,
   `instituicao` varchar(20) NOT NULL,
   `Status` tinyint(1) NOT NULL,
   `Data` date DEFAULT NULL,
   `Hora` time DEFAULT NULL,
+  `Certificado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +68,7 @@ CREATE TABLE `inscricao` (
 
 LOCK TABLES `inscricao` WRITE;
 /*!40000 ALTER TABLE `inscricao` DISABLE KEYS */;
-INSERT INTO `inscricao` VALUES (1,'Gabriella Selbach Staniecki','gsstaniecki@inf.ufpel.edu.br','Ciência da Computação',16104549,'UFPEL',0,'2017-09-19','22:25:22');
+INSERT INTO `inscricao` VALUES (1,'Gabriella Selbach Staniecki','gsstaniecki@inf.ufpel.edu.br','Ciência da Computação','16104549','UFPEL',0,'2017-09-19','22:25:22',1),(11,'Amanda Santos','am@gmail.com','eletronica','2345624','ifsul',0,'2017-09-26','18:07:26',0);
 /*!40000 ALTER TABLE `inscricao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -80,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-20  0:09:53
+-- Dump completed on 2017-09-26 18:08:06

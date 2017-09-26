@@ -9,11 +9,18 @@ include '../conexao.php';
 	$datahora = explode(" ",$datahora);
  	$data = $datahora[0]; 
  	$hora =$datahora[1];
- 	$query= "INSERT INTO inscricao Values" . "(NULL,'$nome','$email','$curso',$matricula,'$instituicao',0,'$data','$hora')";
-	echo $mysqli->query($query);
+
+ 	$sql = "SELECT Matricula from inscricao where Matricula like '$matricula'";
+ 	$mysqli->query($sql);
+ 	if($mysqli->affected_rows>0)
+ 		echo 2;
+ 	else{
+ 	$query= "INSERT INTO inscricao Values" . "(NULL,'$nome','$email','$curso','$matricula','$instituicao',0,'$data','$hora',0)";
+	$mysqli->query($query);
 	if($mysqli->affected_rows>0){
-			
+			echo true;
 		}else{
-			
+			echo false;
 		}
+	}
 ?>

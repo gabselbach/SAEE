@@ -1,0 +1,21 @@
+<script src="js/jquery.js"></script>
+<script language="javascript">
+$(document).ready(function () {
+
+   $("#car").click(function () {  
+      if( $("#car").is(':checked') ){
+            alert('Field is checked - language:english'); 
+            alert('Campo esta selecionado - language:pt-br'); 
+      } else {
+            alert('Field isn t checked! language: english');
+            alert('Campo não selecionado! language: pt-br');
+      }
+  
+   });
+
+ 
+});
+</script>
+<form>
+ <input type="checkbox" id="car" name="car" value="Red Car"  /> Car
+</form>

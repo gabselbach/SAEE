@@ -10,7 +10,6 @@ $("#form").submit(function(e){
 		          success: function(data){
 			            if(data==0){
 			            	location.href='administrativo.html'
-			            	
 			            }else{
 			            	$(".erro").html(data);
 			            }
