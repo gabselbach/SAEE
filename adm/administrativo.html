@@ -7,7 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/cssadm.css">
 		<script src="../js/jquery.js"></script>
 		<script src="../js/verificaSession.js"></script>
-   <script src="../js/listaInscricao.js"></script>
+   		<script src="../js/listaInscricao.js"></script>
+   		<script src="../js/contadores.js"></script>
 	</head>
 	<body>
 	<div id="tudo">
@@ -15,13 +16,15 @@
 				<ul class="drop_menu">
 					<li id="inscricao" class="a"><a href="administrativo.html">Confere Inscrição</a></li>
 					<li  class="a"><a href="listaCertificados.html">Lista nomes para Certificado</a></li>
-					 <div id="sair" style=" position: fixed; margin-left:65%;">
-                <a  href="../index.html"><img id="sair" src="../imagens/sair.png"></a>
+					 <div style=" position: fixed; margin-left:65%;">
+                <a  href="../index.html"><img src="../imagens/sair.png"></a>
                 </div>
                 </ul
-                
+              
 			</div>
 		<div id="meio" >
+			<h3>Numero total de pessoas inscritas:<p id="totalI"></p></h3>
+			<h3>Numero total de pessoas que receberam certificado:<p id="totalC"></p></h3>
 			
 			<table id="tabela">
 			</table>

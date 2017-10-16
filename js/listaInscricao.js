@@ -6,33 +6,26 @@ $(document).ready(function () {
 		         	data:"teste=1",
 		          	success: function(data) {
 		          		$("#tabela").html(data);
+		          		/* foi alterado essa parte */
 		          		$(".clicado").click(function (e) {  
-					     	if( $(".clicado").is(':checked') ){
-					     		var num = (e.target.id);
+		          			var num = $(this).attr('id');
+		          			alert(num);
 					     		alert(" certificado adicionado a uma pessoa ou retirado, caso ela possua certificado irá aparecer um certo na linha do seu nome");
 					      		
 					      		$.ajax({
 								type: "POST",
-								async: true,
+								async: false,
 								url:"../adm/controller/alteraCertificado.php",
 								data: "add="+num, 
-								sucess:function(data){}
-								
-							});
+								sucess:function(data){
+									
+								}
 
-					      	}else{
-					      	
-					      		alert(" certificado adicionado a uma pessoa ou retirado, caso ela possua certificado irá aparecer um certo na linha do seu nome");
-					      		$.ajax({
-								type: "POST",
-								async: true,
-								url:"../adm/controller/alteraCertificado.php",
-								data: "add="+num, 
-								sucess:function(data){}
-								
-							});
-					      	}
+			          			}).done(function(data){
+			          				location.reload();
+			          			});
 					  	});
+					  	/* ate aqui */
 		    			$(".troca").click(function(){
 		    				var nome;
 							var codigo = $(this).val();
@@ -55,8 +48,10 @@ $(document).ready(function () {
 				         			data:"codigo="+codigo,
 				          			success: function(data) {
 				          				alert("pagamento alterado");
-				          				location.reload(); 
+				          				 
 				          			}
+			          			}).done(function(data){
+			          				location.reload();
 			          			});
 								}
 							});
